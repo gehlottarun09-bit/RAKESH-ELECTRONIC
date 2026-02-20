@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rakes Electronic</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body style="font-family: Arial; text-align: center;">
+
+<h1>Rakes Electronic</h1>
+<p>Welcome to our store</p>
+
+<div id="products"></div>
+
+<script>
+const products = [
+  {name:"LED Bulb 9W", price:120},
+  {name:"Mobile Charger", price:250}
+];
+
+let output = "";
+
+products.forEach(product => {
+  output += `
+    <div style="border:1px solid #ccc; margin:10px; padding:10px;">
+      <h3>${product.name}</h3>
+      <p>₹${product.price}</p>
+      <a href="upi://pay?pa=yourupi@upi&pn=RakesElectronic&am=${product.price}&cu=INR">
+      Buy Now</a>
+    </div>
+  `;
+});
+
+document.getElementById("products").innerHTML = output;
+</script>
+
+</body>
+</html>
